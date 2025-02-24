@@ -7,7 +7,6 @@
 - 3.Data Layer: Manages data sources like APIs, databases, and repositories.
 
 - Why do we need Clean Architecture in Android?
-
     - Testability: Layers are independent, making unit testing easier.
     - Scalability: The app becomes modular and easier to maintain as it grows.
    -  Flexibility: Allows swapping data sources (e.g., changing from SQLite to Room) without affecting other layers.
