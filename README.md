@@ -197,6 +197,34 @@ Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest t
     From an Activity: Use supportFragmentManager.
     From a Fragment: Use parentFragmentManager or childFragmentManager (for nested fragments).
 
+# 
+    
+
+# Live Data
+    - LiveData is part of the Android Architecture, jetpack Components and is designed to hold and observe data changes.
+    🔹 LiveData updates UI automatically – No need for manual setText()
+    🔹 Prevents memory leaks – Only updates UI when the Activity is active -  active lifecycle state (e.g., STARTED or RESUMED
+    ✅ Lifecycle-aware – Prevents memory leaks & crashes
+    ✅ No need for callbacks – Simplifies communication between ViewModel and UI
+ 
+     // MutableLiveData is a LiveData whose value can be changed
+    private val _textLiveData = MutableLiveData<String>()
+    // Expose LiveData to the UI (immutable)
+    val textLiveData: LiveData<String> get() = _textLiveData
+    // Observe the LiveData
+        viewModel.textLiveData.observe(this, Observer { newText ->
+            // Update the UI with the new data
+            binding.textView.text = newText
+        })
+
+# 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
+  
+    - Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android. They are part of Kotlin Coroutines and are useful alternatives to LiveData.
+
+1️⃣ Flow – Cold Stream (On-Demand)
+2️⃣ StateFlow – Hot Stream (Always Holds Latest Value)
+3️⃣ SharedFlow – Hot Stream (For One-Time Events)
+
 # Room 
 Room is a SQLite-based persistence library in Android that provides an abstraction layer to make database operations easier, safer, and more efficient.
 
