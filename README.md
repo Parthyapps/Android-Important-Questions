@@ -5,6 +5,11 @@
 - 1.Presentation Layer: Handles the UI and user interactions (e.g., Activities, Fragments, ViewModel).
 - 2.Domain Layer: Contains business logic and use cases. It’s independent of any frameworks.
 - 3.Data Layer: Manages data sources like APIs, databases, and repositories.
+- ✅ MVVM is good for separating UI logic, but it does not handle business logic efficiently.
+- ✅ Clean Architecture ensures better separation of concerns, testability, scalability, and maintainability.
+- ✅ For larger projects, Clean Architecture is essential to avoid tight coupling and messy code.
+- MVVM Issue: ViewModel often contains business logic, making it tightly coupled with data sources.
+- Clean Architecture Fix: Introduces Use Cases (Interactors), ensuring that business logic is independent of UI logic.
 
 - Why do we need Clean Architecture in Android?
     - Testability: Layers are independent, making unit testing easier.
