@@ -1,59 +1,17 @@
 # Android : Most Important Topics
 
-# Clean Architecture
-- Clean Architecture is a software design pattern that organizes code into distinct layers, separating concerns and dependencies. The layers are typically:
-- 1.Presentation Layer: Handles the UI and user interactions (e.g., Activities, Fragments, ViewModel).
-- 2.Domain Layer: Contains business logic and use cases. It’s independent of any frameworks.
-- 3.Data Layer: Manages data sources like APIs, databases, and repositories.
-- ✅ MVVM is good for separating UI logic, but it does not handle business logic efficiently.
-- ✅ Clean Architecture ensures better separation of concerns, testability, scalability, and maintainability.
-- ✅ For larger projects, Clean Architecture is essential to avoid tight coupling and messy code.
-- MVVM Issue: ViewModel often contains business logic, making it tightly coupled with data sources.
-- Clean Architecture Fix: Introduces Use Cases (Interactors), ensuring that business logic is independent of UI logic.
-
-- Why do we need Clean Architecture in Android?
-    - Testability: Layers are independent, making unit testing easier.
-    - Scalability: The app becomes modular and easier to maintain as it grows.
-   -  Flexibility: Allows swapping data sources (e.g., changing from SQLite to Room) without affecting other layers.
-    - Separation of Concerns: Each layer has a specific role, improving code readability and maintainability.
-
-# SOLID Principles
-S: Single Responsibility Principle (SRP)
-
-    Definition: A class should have only one reason to change. It should have one job or responsibility.
-    Why we need it: Reduces the risk of introducing bugs when making changes to the class.
-    Example: A User class should only handle user details, not database operations or authentication.
-
-O: Open/Closed Principle (OCP)
-
-    Definition: A class should be open for extension but closed for modification.
-    Why we need it: Allows adding new features without altering existing code, reducing the risk of introducing bugs.
-    Example: Use interfaces or inheritance to extend functionality instead of modifying existing classes.
-
-L: Liskov Substitution Principle (LSP)
-
-    Definition: Objects of a superclass should be replaceable with objects of a subclass without affecting the program's behavior.
-    Why we need it: Prevents unexpected behavior when using polymorphism.
-    Example: A Square class should not break the behavior of a Rectangle class if it inherits from it.
-
-I: Interface Segregation Principle (ISP)
-
-    Definition: A class should not be forced to implement interfaces it does not use.
-    Why we need it: Keeps interfaces specific to the needs of the client, reducing unnecessary dependencies.
-    Example: Instead of a single Animal interface with unrelated methods like fly() and swim(), split it into smaller interfaces like Flyable and Swimmable.
-
-D: Dependency Inversion Principle (DIP)
-
-    Definition: High-level modules should not depend on low-level modules. Both should depend on abstractions.
-    Why we need it: Promotes loose coupling between components, making the system more flexible.
-    Example: A Notification class should depend on an abstraction (Notifier) rather than concrete classes like EmailNotifier or SMSNotifier.
-
-## ANDROID
 ## Core Building Blocks or Fundamental Components:
 
 - **Activity** - Represents a single screen with a user interface
 - **Views** - UI components for creating the user interface
-- **Intents** - Facilitate communication between different components or apps
+- **Intents** - It is used to communication between different components (activities, services, broadcasts, etc.). It helps in launching activities, starting services, sending data, and broadcasting system events.  
+  **Types of Intents in Android**
+    
+        Explicit Intent → Used to start a specific component (Activity, Service).
+        Implicit Intent → Used to request an action from another app/component (e.g., opening a web page, sending an email).
+        Broadcast Intent → Used to send system-wide messages (e.g., battery low, network change).
+        Pending Intent → Used for deferred execution, like notifications and alarms.
+- 
 - **Services** - Long running background process. or Execute background tasks without a UI
 - **Content Providers** - Used to share data between the apps
 - **Fragments** - A modular portion of the user interface within an activity
@@ -261,3 +219,53 @@ abstract class AppDatabase : RoomDatabase() {
 }
 
 ```
+
+# Clean Architecture
+- Clean Architecture is a software design pattern that organizes code into distinct layers, separating concerns and dependencies. The layers are typically:
+- 1.Presentation Layer: Handles the UI and user interactions (e.g., Activities, Fragments, ViewModel).
+- 2.Domain Layer: Contains business logic and use cases. It’s independent of any frameworks.
+- 3.Data Layer: Manages data sources like APIs, databases, and repositories.
+- ✅ MVVM is good for separating UI logic, but it does not handle business logic efficiently.
+- ✅ Clean Architecture ensures better separation of concerns, testability, scalability, and maintainability.
+- ✅ For larger projects, Clean Architecture is essential to avoid tight coupling and messy code.
+- MVVM Issue: ViewModel often contains business logic, making it tightly coupled with data sources.
+- Clean Architecture Fix: Introduces Use Cases (Interactors), ensuring that business logic is independent of UI logic.
+
+- Why do we need Clean Architecture in Android?
+    - Testability: Layers are independent, making unit testing easier.
+    - Scalability: The app becomes modular and easier to maintain as it grows.
+   -  Flexibility: Allows swapping data sources (e.g., changing from SQLite to Room) without affecting other layers.
+    - Separation of Concerns: Each layer has a specific role, improving code readability and maintainability.
+
+# SOLID Principles
+S: Single Responsibility Principle (SRP)
+
+    Definition: A class should have only one reason to change. It should have one job or responsibility.
+    Why we need it: Reduces the risk of introducing bugs when making changes to the class.
+    Example: A User class should only handle user details, not database operations or authentication.
+
+O: Open/Closed Principle (OCP)
+
+    Definition: A class should be open for extension but closed for modification.
+    Why we need it: Allows adding new features without altering existing code, reducing the risk of introducing bugs.
+    Example: Use interfaces or inheritance to extend functionality instead of modifying existing classes.
+
+L: Liskov Substitution Principle (LSP)
+
+    Definition: Objects of a superclass should be replaceable with objects of a subclass without affecting the program's behavior.
+    Why we need it: Prevents unexpected behavior when using polymorphism.
+    Example: A Square class should not break the behavior of a Rectangle class if it inherits from it.
+
+I: Interface Segregation Principle (ISP)
+
+    Definition: A class should not be forced to implement interfaces it does not use.
+    Why we need it: Keeps interfaces specific to the needs of the client, reducing unnecessary dependencies.
+    Example: Instead of a single Animal interface with unrelated methods like fly() and swim(), split it into smaller interfaces like Flyable and Swimmable.
+
+D: Dependency Inversion Principle (DIP)
+
+    Definition: High-level modules should not depend on low-level modules. Both should depend on abstractions.
+    Why we need it: Promotes loose coupling between components, making the system more flexible.
+    Example: A Notification class should depend on an abstraction (Notifier) rather than concrete classes like EmailNotifier or SMSNotifier.
+
+
