@@ -13,6 +13,8 @@
         Pending Intent → Used for deferred execution, like notifications and alarms.
 - 
 - **Services** - Long running background process. or Execute background tasks without a UI
+- ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
+
 - **Content Providers** - Used to share data between the apps
 - **Fragments** - A modular portion of the user interface within an activity
 - **Android Manifest** - Contains essential metadata about the application
@@ -80,6 +82,8 @@ Handling errors (e.g., network failures, HTTP status codes) and using try-catch 
 
 - Handler and Looper: Used for communicating between background threads and the main thread.
 - WorkManager: Manages background tasks that should run even if the app is closed or the device is rebooted.
+- ![image](https://github.com/user-attachments/assets/c5b8abf1-5ab2-4c0c-b25a-99b4901d8888)
+
 - Coroutines provide a modern approach to handle background work more efficiently compared to older methods like AsyncTask.
     
 ## Android Context Two types
