@@ -11,7 +11,7 @@
         Implicit Intent → Used to request an action from another app/component (e.g., opening a web page, sending an email).
         Broadcast Intent → Used to send system-wide messages (e.g., battery low, network change).
         Pending Intent → Used for deferred execution, like notifications and alarms.
-- 
+
 - **Services** - Long running background process. or Execute background tasks without a UI
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
