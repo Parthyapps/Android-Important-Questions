@@ -16,7 +16,7 @@
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
 - **Content Providers** - Used to share data between the apps
-  ✅ Use Content Provider when you need to share data between apps securely.
+- ✅ Use Content Provider when you need to share data between apps securely.
   ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
   
 - **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).
@@ -62,22 +62,23 @@
 - **onDetach()**: Detaches the fragment from its hosting activity.
 
 ## Jetpack Components:
-- **ViewModel**: Part of the Android Architecture Components. It is used to store and manage UI-related data in a lifecycle-aware manner, surviving configuration changes such as screen rotations.
-- **LiveData**: An observable data holder class that notifies UI components when data changes. It’s lifecycle-aware, meaning it only updates active observers.
+- **ViewModel**: Part of the Android Architecture Components. It is used to store and manage UI-related data in a lifecycle-aware manner, surviving configuration changes such as screen rotations.Prevents data loss on rotation
+- **LiveData**: Observes and reacts to UI data changes. It’s lifecycle-aware, meaning it only updates active observers.
 - **Navigation Component**: Simplifies the implementation of navigation between screens and supports features like deep linking and safe arguments.
 - **Paging**: A component that allows users to load and display large data sets with infinite scrolling
 - **Jetpack Compose**: A Kotlin-based toolkit for building native UI
 - **Android KTX**: A library that increases support for the Kotlin language for app development 
-- **WorkManager**: Used for background tasks that need guaranteed execution, such as periodic data syncing.
+- **WorkManager**: Handles reliable background tasks (e.g., syncing, file uploads).
 - **Room**: An abstraction layer over SQLite that handles database creation and management with type-safe access to database queries.
+- **DataBinding**: Reduces findViewById() calls & connects UI elements with data
 - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
 ## RecyclerView
-- A more advanced and flexible version of ListView, used to display a large number of items efficiently.
+- A more advanced and flexible version of ListView,  It is used to efficiently display large lists of data by reusing views instead of creating new ones every time.
   Adapter and ViewHolder patterns are key concepts for recycling views and improving performance.
-  DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
+- DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
 - Async Image Loading:Use image-loading libraries like Glide or Picasso to load images asynchronously, preventing UI freezes.
-- RecyclerView is a newer, more flexible option than ListView for displaying lists in Android apps.
+- RecyclerView LinearLayoutManager, GridLayoutManager
 
 ## Networking
 - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
@@ -86,6 +87,7 @@ Handling errors (e.g., network failures, HTTP status codes) and using try-catch 
 
 ## Data Storage:
 - SharedPreferences: Simple key-value storage for saving small amounts of primitive data.
+- DataStore (Jetpack): Modern alternative to SharedPreferences	
 - Room Database: Structured storage using SQL with support for complex queries.
 - SQLite: A database option for more manual management of structured data.
 
