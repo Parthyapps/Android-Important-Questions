@@ -2,7 +2,7 @@
 
 ## Core Building Blocks or Fundamental Components:
 
-- **Activity** - Represents a single screen with a user interface
+- **Activity** - An Activity is a single screen with a user interface (UI).
 - **Views** - UI components for creating the user interface
 - **Intents** - It is used to communication between different components (activities, services, broadcasts, etc.). It helps in launching activities, starting services, sending data, and broadcasting system events.  
   **Types of Intents in Android**
@@ -16,6 +16,13 @@
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
 - **Content Providers** - Used to share data between the apps
+- **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-wide or app-specific broadcast messages (intents).
+   Alternatives to BroadcastReceiver
+  
+      WorkManager → For background tasks that must complete (e.g., syncing, file uploads).
+      LiveData / Flow → For real-time data updates within the app.
+      EventBus / RxJava → For app-wide event-based communication.
+  
 - **Fragments** - A modular portion of the user interface within an activity
 - **Android Manifest** - Contains essential metadata about the application
 
@@ -27,6 +34,14 @@
 - **onStop()**: Called when the activity is no longer visible to the user.
 - **onDestroy()**: Called before the activity is destroyed. This is where you should release any resources that aren't needed anymore.
 - **OnRestart()**: Called when the activity has been stopped and is restarting again.
+  **Activity Launch Modes**
+  
+    Define how a new Activity instance is created:
+  
+        standard (default): Creates a new instance every time.
+        singleTop: Reuses the existing instance if it’s at the top of the stack.
+        singleTask: Reuses the existing instance in the task (clears activities above it).
+        singleInstance: Creates a new task with only this Activity.
 
 ## Fragment Lifecycle:
  * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
