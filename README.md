@@ -16,7 +16,10 @@
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
 - **Content Providers** - Used to share data between the apps
-- **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-wide or app-specific broadcast messages (intents).
+  ✅ Use Content Provider when you need to share data between apps securely.
+  ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
+  
+- **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).
    Alternatives to BroadcastReceiver
   
       WorkManager → For background tasks that must complete (e.g., syncing, file uploads).
