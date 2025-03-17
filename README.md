@@ -155,6 +155,10 @@ MVVM, MVC, MVP
 
 # ViewModel Use and Features
 
+- ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
+
+- ViewModel can be created with activity context or fragment context.When a ViewModel object is created, it is stored inside Activity OR FragmentManager.
+
 A ViewModel stores and manages UI-related data across configuration changes, ensuring lifecycle awareness and separation of concerns.
 Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest to handle configuration changes.
 
@@ -205,8 +209,10 @@ Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest t
         })
 
 # 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
-  
-    - Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android. They are part of Kotlin Coroutines and are useful alternatives to LiveData.
+
+
+- Flow" is a way to handle asynchronous data streams, allowing you to emit multiple values sequentially over time, similar to sequences but with support for suspending function  
+- Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android. They are part of Kotlin Coroutines and are useful alternatives to LiveData.
 
 1️⃣ Flow – Cold Stream (On-Demand)
 2️⃣ StateFlow – Hot Stream (Always Holds Latest Value)
