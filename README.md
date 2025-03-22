@@ -13,6 +13,9 @@
         Pending Intent → Used for deferred execution, like notifications and alarms.
 
 - **Services** - Long running background process. or Execute background tasks without a UI
+- Lifecycle of Android Services
+-     Started Service startService()
+      Bounded Service bindService()
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
 - **Content Providers** - Used to share data between the apps
