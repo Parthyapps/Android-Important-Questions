@@ -13,9 +13,9 @@
         Pending Intent → Used for deferred execution, like notifications and alarms.
 
 - **Services** - Long running background process. or Execute background tasks without a UI
-- Lifecycle of Android Services
--     Started Service startService()
-      Bounded Service bindService()
+ Lifecycle of Android Services
+-     Started Service startService() Started service can be stopped in two ways: stopService(), stopSelf() method
+      Bounded Service bindService() can be stopped by unbindService()
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
 - **Content Providers** - Used to share data between the apps
@@ -82,6 +82,14 @@
 - DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
 - Async Image Loading:Use image-loading libraries like Glide or Picasso to load images asynchronously, preventing UI freezes.
 - RecyclerView LinearLayoutManager, GridLayoutManager
+- 1. Key Features of RecyclerView
+
+✅ View Recycling – Reuses off-screen views to save memory
+✅ Layout Managers – Supports linear, grid, and staggered layouts
+✅ Animations – Built-in item animations (add/remove/change)
+✅ Flexible Adapters – Customizable data binding with RecyclerView.Adapter
+✅ Item Decorations – Add dividers, spacing, or custom decorations
+✅ Efficient Updates – DiffUtil for smart data changes
 
 ## Networking
 - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
@@ -194,11 +202,9 @@ MVVM, MVC, MVP
     From an Activity: Use supportFragmentManager.
     From a Fragment: Use parentFragmentManager or childFragmentManager (for nested fragments).
 
-# 
-    
-
 # Live Data
     - LiveData is part of the Android Architecture, jetpack Components and is designed to hold and observe data changes.
+    - For communication between components within the same app
     🔹 LiveData updates UI automatically – No need for manual setText()
     🔹 Prevents memory leaks – Only updates UI when the Activity is active -  active lifecycle state (e.g., STARTED or RESUMED
     ✅ Lifecycle-aware – Prevents memory leaks & crashes
@@ -215,7 +221,6 @@ MVVM, MVC, MVP
         })
 
 # 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
-
 
 - Flow" is a way to handle asynchronous data streams, allowing you to emit multiple values sequentially over time, similar to sequences but with support for suspending function  
 - Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android. They are part of Kotlin Coroutines and are useful alternatives to LiveData.
