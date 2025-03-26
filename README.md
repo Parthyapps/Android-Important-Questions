@@ -97,10 +97,20 @@ OkHttp: A powerful HTTP client that supports features like interceptors for hand
 Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
 
 ## Data Storage:
-- SharedPreferences: Simple key-value storage for saving small amounts of primitive data.
+- SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (async) and commit() (sync)
 - DataStore (Jetpack): Modern alternative to SharedPreferences	
 - Room Database: Structured storage using SQL with support for complex queries.
 - SQLite: A database option for more manual management of structured data.
+- Modern Alternatives
+
+    For SharedPreferences:
+  
+        DataStore (Jetpack) – Improved version with Kotlin coroutines support.
+        EncryptedSharedPreferences (for secure storage).
+    For ContentResolver:
+
+        Room Database (for local structured data).
+        WorkManager + REST APIs (for cloud data).
 
 ## Dependency Injection:
 
@@ -157,12 +167,6 @@ Pending Intent
 # Pending intend
 
 A PendingIntent is a tokenized intent that allows another application (e.g., a system service) to perform an action on behalf of your application. It's commonly used in notifications and alarms.
-
-MVVM, MVC, MVP
-
-    MVC: Separates UI (View), Business Logic (Controller), and Data (Model).
-    MVP: Similar to MVC, but Presenter handles business logic and updates the View.
-    MVVM: ViewModel holds UI-related data and logic, and updates the View through LiveData/Flow.
 
 # ViewModel Use and Features
 
@@ -260,6 +264,26 @@ abstract class AppDatabase : RoomDatabase() {
 }
 
 ```
+Android App Security Best Practices
+ 1.Encrypt Sensitive Data
+
+    Use EncryptedSharedPreferences instead of regular SharedPreferences.
+    For local databases, use SQLCipher or Room with encryption.
+ 2.Secure Network Communication   
+     
+    Always use HTTPS (TLS 1.2+).
+    Implement Certificate Pinning to prevent MITM attacks.
+    Use ProGuard/R8 to strip logs in release builds.
+    ProGuard/R8 (Basic Obfuscation)
+    - Renames classes/methods to make decompiled code unreadable.
+    - Removes unused code (shrinking).
+
+ # Memory Management in Android   
+ - user LeakCanary for detecting leaks.
+ - Unregister Listeners in onDestroy()
+ - Use Glide or Coil for image loading (automatic memory optimization).
+ - Check with Android Profiler (in Android Studio).
+ - Use ActivityManager to get memory info:
 
 # Clean Architecture
 - Clean Architecture is a software design pattern that organizes code into distinct layers, separating concerns and dependencies. The layers are typically:
