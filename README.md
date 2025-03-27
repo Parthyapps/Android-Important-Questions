@@ -142,15 +142,17 @@ Handling errors (e.g., network failures, HTTP status codes) and using try-catch 
 - UIL (Universal Image Loader)
 
 # Serializable:
-
+  Both Serializable and Parcelable are used for object serialization in Android
+ 
     Java-native interface.
     Slower due to reflection.
-    Increases memory overhead.
+    Consumes more memory.
 
 # Parcelable:
 
-    Android-specific.
-    Faster and optimized for IPC (Inter-Process Communication).
+    Android-specific interface (android.os.Parcelable).
+    Used manual implementation for reading/writing data, making it much faster than Serializable.
+    More optimized for Android IPC (Inter-Process Communication).
     Requires manual implementation.
 
 # MVVM, MVC, MVP
@@ -162,7 +164,6 @@ Handling errors (e.g., network failures, HTTP status codes) and using try-catch 
 # Java Garbage Collection
 
 Java garbage collection is an automatic memory management process where unused objects are identified and removed to free memory, using techniques like mark-and-sweep.
-Pending Intent
 
 # Pending intend
 
