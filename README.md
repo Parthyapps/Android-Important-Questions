@@ -142,7 +142,7 @@ Handling errors (e.g., network failures, HTTP status codes) and using try-catch 
 - UIL (Universal Image Loader)
 
 # Serializable:
-  Both Serializable and Parcelable are used for object serialization in Android
+  Both Serializable and Parcelable are used for object serialization in Android.
  
     Java-native interface.
     Slower due to reflection.
@@ -170,7 +170,6 @@ Java garbage collection is an automatic memory management process where unused o
 A PendingIntent is a tokenized intent that allows another application (e.g., a system service) to perform an action on behalf of your application. It's commonly used in notifications and alarms.
 
 # ViewModel Use and Features
-
 - ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
 - ViewModel can be created with activity context or fragment context.When a ViewModel object is created, it is stored inside Activity OR FragmentManager.
 - ViewModel is part of Android's Jetpack Architecture Components and is used to store and manage UI-related data in a lifecycle-conscious way. It helps survive configuration changes (like screen rotation) without losing data.
@@ -270,8 +269,8 @@ Android App Security Best Practices
 
     Use EncryptedSharedPreferences instead of regular SharedPreferences.
     For local databases, use SQLCipher or Room with encryption.
- 2.Secure Network Communication   
-     
+ 2.Secure Network Communication Security:
+   
     Always use HTTPS (TLS 1.2+).
     Implement Certificate Pinning to prevent MITM attacks.
     Use ProGuard/R8 to strip logs in release builds.
