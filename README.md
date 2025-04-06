@@ -4,6 +4,8 @@
 
 - **Activity** - An Activity is a single screen with a user interface (UI).
 - **Views** - UI components for creating the user interface
+- **Fragments** - A modular portion of the user interface within an activity
+- **Android Manifest** - Contains essential metadata about the application
 - **Intents** - It is used to communication between different components (activities, services, broadcasts, etc.). It helps in launching activities, starting services, sending data, and broadcasting system events.  
   **Types of Intents in Android**
     
@@ -38,17 +40,15 @@
 
 - **Content Providers** - Used to share data between the apps
 - ✅ Use Content Provider when you need to share data between apps securely.
-  ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
+- ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
+- **For Content Providers: Consider using FileProvider for file sharing**
   
 - **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).
-   Alternatives to BroadcastReceiver
+- Alternatives to BroadcastReceiver
   
       WorkManager → For background tasks that must complete (e.g., syncing, file uploads).
       LiveData / Flow → For real-time data updates within the app.
       EventBus / RxJava → For app-wide event-based communication.
-  
-- **Fragments** - A modular portion of the user interface within an activity
-- **Android Manifest** - Contains essential metadata about the application
 
 ## Activity Lifecycle:
 - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
