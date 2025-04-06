@@ -16,11 +16,23 @@
  Lifecycle of Android Services
 - Types of services
 - 1. Foreground Services Example: music player, file download
-  2. Background Services:  Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
-  3. Bound Services: 
+  2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
+  3. Bound Services:
+  Started Service Lifecycle 
 
--     Started Service startService() Started service can be stopped in two ways: stopService(), stopSelf() method
-      Bounded Service bindService() can be stopped by unbindService()
+         onCreate() - Called when service is first created
+         onStartCommand() - Called every time startService() is invoked
+         Service runs until it stops itself or is stopped by the system
+         onDestroy() - Called when service is terminating
+
+  Bound Service Lifecycle
+   
+       onCreate() - Called when service is first created
+       onBind() - Called when a component wants to bind to the service
+       Service runs as long as at least one component is bound to it
+       onUnbind() - Called when all components have unbound
+       onDestroy() - Called when service is terminating
+
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
 
 - **Content Providers** - Used to share data between the apps
