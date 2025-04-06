@@ -14,6 +14,11 @@
 
 - **Services** - Long running background process. or Execute background tasks without a UI
  Lifecycle of Android Services
+- Types of services
+- 1. Foreground Services Example: music player, file download
+  2. Background Services:  Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
+  3. Bound Services: 
+
 -     Started Service startService() Started service can be stopped in two ways: stopService(), stopSelf() method
       Bounded Service bindService() can be stopped by unbindService()
 - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
