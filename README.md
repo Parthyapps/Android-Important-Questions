@@ -17,8 +17,9 @@
 - Types of services
 - 1. Foreground Services Example: music player, file download
   2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
-  3. Bound Services:
-  Started Service Lifecycle 
+  3. Bound Services: ongoing interaction between your UI and background operations, especially when multiple components need to share the same service functionality.
+  
+ Started Service Lifecycle 
 
          onCreate() - Called when service is first created
          onStartCommand() - Called every time startService() is invoked
