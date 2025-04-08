@@ -244,6 +244,10 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
 
 # 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
 
+- Not Lifecycle-Aware (by default):
+- Platform-independent
+- Designed for coroutines
+- Provides built-in support for handling errors through operators. 
 - Flow" is a way to handle asynchronous data streams, allowing you to emit multiple values sequentially over time, similar to sequences but with support for suspending function  
 - Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android. They are part of Kotlin Coroutines and are useful alternatives to LiveData.
 
