@@ -231,6 +231,8 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
     🔹 Prevents memory leaks – Only updates UI when the Activity is active -  active lifecycle state (e.g., STARTED or RESUMED
     ✅ Lifecycle-aware – Prevents memory leaks & crashes
     ✅ No need for callbacks – Simplifies communication between ViewModel and UI
+
+-DisAdv: LiveData does not have built-in support for error handling
  
      // MutableLiveData is a LiveData whose value can be changed
     private val _textLiveData = MutableLiveData<String>()
