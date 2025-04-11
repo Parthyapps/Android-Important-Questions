@@ -3,15 +3,16 @@
 ## Core Building Blocks or Fundamental Components:
 
 - 🧩**Activity** - An Activity is a single screen with a user interface (UI).
+  
       - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
-- 🧩**Services**
-      - Long running background process. or Execute background tasks without a UI
-       Lifecycle of Android Services
-      - Types of services
-      - 1. Foreground Services Example: music player, file download
+- 🧩**Services** - Long running background process. or Execute background tasks without a UI
+
+
+        Lifecycle of Android Services
+      Types of services
+        1. Foreground Services Example: music player, file download
         2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
-        3. Bound Services: ongoing interaction between your UI and background operations,
-   especially when multiple components need to share the same service functionality.
+        3. Bound Services: ongoing interaction between your UI and background operations, especially when multiple components need to share the same service functionality.
         
        Started Service Lifecycle 
       
@@ -28,7 +29,7 @@
              onUnbind() - Called when all components have unbound
              onDestroy() - Called when service is terminating
       
-      - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
+  [image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
       
 - 🧩**Content Providers** - Used to share data between the apps
   
