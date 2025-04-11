@@ -31,6 +31,7 @@
       - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
       
 - 🧩**Content Providers** - Used to share data between the apps
+  
       - ✅ Use Content Provider when you need to share data between apps securely.
       - ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
       - 🧩 How it Works – URI Based Access
@@ -46,7 +47,7 @@
       EventBus / RxJava → For app-wide event-based communication.
 
 ## 🧩**Activity Lifecycle:**
-   - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
+    - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
     - **onStart()**: Called when the activity becomes visible to the user.
     - **onResume()**: Called when the activity starts interacting with the user. This is typically where animations and other things that require CPU resources should be started.
     - **onPause()**: Called when the activity is partially obscured by another activity. This is a good place to commit unsaved changes or pause ongoing processes.
@@ -68,7 +69,7 @@
           singleInstance: Creates a new task with only this Activity.
 
 ## 🧩**Fragment Lifecycle:**
-   * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
+    * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
     - **onAttach()**: Attaches the fragment to its hosting activity.
     - **onCreate()**: Initializes the fragment.
     - **onCreateView()**: Creates the fragment's UI.
@@ -135,9 +136,10 @@
       ✅ Efficient Updates – DiffUtil for smart data changes
       
 ## 🧩**Networking**
-      - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
-      OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
-      Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
+     
+    - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
+    - OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
+    - Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
 
 ## 🧩**Data Storage:**
 - SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (async) and commit() (sync)
