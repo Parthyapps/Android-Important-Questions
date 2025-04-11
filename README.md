@@ -6,7 +6,10 @@
 - **Views** - UI components for creating the user interface
 - **Fragments** - A modular portion of the user interface within an activity
 - **Android Manifest** - Contains essential metadata about the application
-- **Intents** - It is used to communication between different components (activities, services, broadcasts, etc.). It helps in launching activities, starting services, sending data, and broadcasting system events.  
+- **Intents**
+
+           - It is used to communication between different components (activities, services, broadcasts, etc.). It helps in launching activities, starting services, sending data,and broadcasting system events.  
+
   **Types of Intents in Android**
     
         Explicit Intent → Used to start a specific component (Activity, Service).
@@ -14,36 +17,40 @@
         Broadcast Intent → Used to send system-wide messages (e.g., battery low, network change).
         Pending Intent → Used for deferred execution, like notifications and alarms.
 
-- **Services** - Long running background process. or Execute background tasks without a UI
- Lifecycle of Android Services
-- Types of services
-- 1. Foreground Services Example: music player, file download
-  2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
-  3. Bound Services: ongoing interaction between your UI and background operations, especially when multiple components need to share the same service functionality.
-  
- Started Service Lifecycle 
+- **Services**
 
-         onCreate() - Called when service is first created
-         onStartCommand() - Called every time startService() is invoked
-         Service runs until it stops itself or is stopped by the system
-         onDestroy() - Called when service is terminating
+      - Long running background process. or Execute background tasks without a UI
 
-  Bound Service Lifecycle
-   
-       onCreate() - Called when service is first created
-       onBind() - Called when a component wants to bind to the service
-       Service runs as long as at least one component is bound to it
-       onUnbind() - Called when all components have unbound
-       onDestroy() - Called when service is terminating
-
-- ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
-
+       Lifecycle of Android Services
+      - Types of services
+      - 1. Foreground Services Example: music player, file download
+        2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
+        3. Bound Services: ongoing interaction between your UI and background operations, especially when multiple components need to share the same service functionality.
+        
+       Started Service Lifecycle 
+      
+               onCreate() - Called when service is first created
+               onStartCommand() - Called every time startService() is invoked
+               Service runs until it stops itself or is stopped by the system
+               onDestroy() - Called when service is terminating
+      
+        Bound Service Lifecycle
+         
+             onCreate() - Called when service is first created
+             onBind() - Called when a component wants to bind to the service
+             Service runs as long as at least one component is bound to it
+             onUnbind() - Called when all components have unbound
+             onDestroy() - Called when service is terminating
+      
+      - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
+      
 - **Content Providers** - Used to share data between the apps
-- ✅ Use Content Provider when you need to share data between apps securely.
-- ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
-- **For Content Providers: Consider using FileProvider for file sharing**
+
+        - ✅ Use Content Provider when you need to share data between apps securely.
+        - ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
+        - **For Content Providers: Consider using FileProvider for file sharing**
   
-- **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).
+- **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).    
 - Alternatives to BroadcastReceiver
   
       WorkManager → For background tasks that must complete (e.g., syncing, file uploads).
