@@ -217,6 +217,18 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
 
 # 🧩ViewModel Use and Features
 - ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
+
+      - Activity/Fragment
+        |
+        ⬇
+      [ViewModelStoreOwner]  
+        |
+        ⬇
+      [ViewModelStore]  ← stores all ViewModels
+        |
+        ⬇
+      ViewModelProvider  ← creates/fetches ViewModels
+
 - ViewModel can be created with activity context or fragment context.When a ViewModel object is created, it is stored inside Activity OR FragmentManager.
 - ViewModel is part of Android's Jetpack Architecture Components and is used to store and manage UI-related data in a lifecycle-conscious way. It helps survive configuration changes (like screen rotation) without losing data.
 - Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest to handle configuration changes.
