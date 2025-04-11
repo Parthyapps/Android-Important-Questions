@@ -2,19 +2,16 @@
 
 ## Core Building Blocks or Fundamental Components:
 
-- **Activity** - An Activity is a single screen with a user interface (UI).
-
+- 🧩**Activity** - An Activity is a single screen with a user interface (UI).
       - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
-
-- **Services**
-
+- 🧩**Services**
       - Long running background process. or Execute background tasks without a UI
-
        Lifecycle of Android Services
       - Types of services
       - 1. Foreground Services Example: music player, file download
         2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
-        3. Bound Services: ongoing interaction between your UI and background operations, especially when multiple components need to share the same service functionality.
+        3. Bound Services: ongoing interaction between your UI and background operations,
+   especially when multiple components need to share the same service functionality.
         
        Started Service Lifecycle 
       
@@ -33,14 +30,13 @@
       
       - ![image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
       
-- **Content Providers** - Used to share data between the apps
-
+- 🧩**Content Providers** - Used to share data between the apps
       - ✅ Use Content Provider when you need to share data between apps securely.
       - ✅ Use it for accessing system-wide data like Contacts, Media, or Calendar.
       - 🧩 How it Works – URI Based Access
       - Use FileProvider to share files via URIs, especially for sending images via Intent or opening PDFs.
   
-- **Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).
+- 🧩**Broadcast Receiver** -  A BroadcastReceiver is a component in Android that listens for system-events or app-specific broadcast messages (intents).
 - Example: Battery low, network change, SMS received.
 - App-Local Communication (Custom Broadcasts)   
 - Alternatives to BroadcastReceiver
@@ -49,8 +45,8 @@
       LiveData / Flow → For real-time data updates within the app.
       EventBus / RxJava → For app-wide event-based communication.
 
-## Activity Lifecycle:
-    - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
+## 🧩**Activity Lifecycle:**
+   - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
     - **onStart()**: Called when the activity becomes visible to the user.
     - **onResume()**: Called when the activity starts interacting with the user. This is typically where animations and other things that require CPU resources should be started.
     - **onPause()**: Called when the activity is partially obscured by another activity. This is a good place to commit unsaved changes or pause ongoing processes.
@@ -64,16 +60,15 @@
      - (B)- oncreate()-> onstart() -> onResume() - onstop() (A)
      - (BackToA) (B) - onRestart() -> onStart() -> onResume()
       
-        **Activity Launch Modes**
+      **Activity Launch Modes**
       Define how a new Activity instance is created:
-    
           standard (default): Creates a new instance every time.
           singleTop: Reuses the existing instance if it’s at the top of the stack.
           singleTask: Reuses the existing instance in the task (clears activities above it).
           singleInstance: Creates a new task with only this Activity.
 
-## Fragment Lifecycle:
-     * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
+## 🧩**Fragment Lifecycle:**
+   * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
     - **onAttach()**: Attaches the fragment to its hosting activity.
     - **onCreate()**: Initializes the fragment.
     - **onCreateView()**: Creates the fragment's UI.
@@ -99,7 +94,7 @@
     From a Fragment: Use parentFragmentManager or childFragmentManager (for nested fragments).
 
 
-- **Intents**
+- 🧩**Intents**
   
       - It is used to communication between different components (activities, services, broadcasts, etc.).
       - It helps in launching activities, starting services, sending data,and broadcasting system events.  
@@ -111,8 +106,8 @@
         Broadcast Intent → Used to send system-wide messages (e.g., battery low, network change).
         Pending Intent → Used for deferred execution, like notifications and alarms.
 
-## Jetpack Components:
-      - **ViewModel**: Part of the Android Architecture Components.
+## 🧩**Jetpack Components:**
+   - **ViewModel**: Part of the Android Architecture Components.
         It is used to store and manage UI-related data in a lifecycle-aware manner, surviving configuration changes such as screen rotations.Prevents data loss on rotation
       - **LiveData**: Observes and reacts to UI data changes. It’s lifecycle-aware, meaning it only updates active observers.
       - **Navigation Component**: Simplifies the implementation of navigation between screens and supports features like deep linking and safe arguments.
@@ -124,7 +119,7 @@
       - **DataBinding**: Reduces findViewById() calls & connects UI elements with data
       - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
-## RecyclerView
+## 🧩**RecyclerView**
       - A more advanced and flexible version of ListView,  It is used to efficiently display large lists of data by reusing views instead of creating new ones every time.
         Adapter and ViewHolder patterns are key concepts for recycling views and improving performance.
       - DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
@@ -139,12 +134,12 @@
       ✅ Item Decorations – Add dividers, spacing, or custom decorations
       ✅ Efficient Updates – DiffUtil for smart data changes
       
-## Networking
+## 🧩**Networking**
       - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
       OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
       Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
 
-## Data Storage:
+## 🧩**Data Storage:**
 - SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (async) and commit() (sync)
 - DataStore (Jetpack): Modern alternative to SharedPreferences	
 - Room Database: Structured storage using SQL with support for complex queries.
@@ -160,14 +155,14 @@
         Room Database (for local structured data).
         WorkManager + REST APIs (for cloud data).
 
-## Dependency Injection:
+## 🧩**Dependency Injection:**
 
 - Dagger 2: A compile-time dependency injection framework providing dependency management and injection with minimal runtime overhead.
 - It's based on annotations and code generation.
 - Hilt: A simpler way to integrate Dagger 2, making it easier to set up and use in Android projects.
 - Koin: A lightweight dependency injection library for Kotlin that’s easy to learn and integrate.
 
-## Multithreading and Background Work:
+## 🧩**Multithreading and Background Work:**
 
 - Handler and Looper: Used for communicating between background threads and the main thread.
 - WorkManager: Manages background tasks that should run even if the app is closed or the device is rebooted.
@@ -175,49 +170,49 @@
 
 - Coroutines provide a modern approach to handle background work more efficiently compared to older methods like AsyncTask.
     
-## Android Context Two types
+## 🧩**Android Context Two types**
 - 1.Application Context - need to access resources that are not tied to any specific activity, use the Application context.
 - 2.Activity Context - need to access resources that are tied to a specific activity, use the Activity context
 - It allows us to access resources.
 - It allows us to interact with other Android components by sending messages.
 - It gives you information about your app environment.
 
-## Image Loading libraries
+## 🧩Image Loading libraries
 - Picasso
 - Glide
 - Fresco
 - COIL (Coroutine Image Loader)
 - UIL (Universal Image Loader)
 
-# Serializable:
+# 🧩Serializable:
   Both Serializable and Parcelable are used for object serialization in Android.
  
     Java-native interface.
     Slower due to reflection.
     Consumes more memory.
 
-# Parcelable:
+# 🧩Parcelable:
 
     Android-specific interface (android.os.Parcelable).
     Used manual implementation for reading/writing data, making it much faster than Serializable.
     More optimized for Android IPC (Inter-Process Communication).
     Requires manual implementation.
 
-# MVVM, MVC, MVP
+# 🧩MVVM, MVC, MVP
 
     MVC: Separates UI (View), Business Logic (Controller), and Data (Model).
     MVP: Similar to MVC, but Presenter handles business logic and updates the View.
     MVVM: ViewModel holds UI-related data and logic, and updates the View through LiveData/Flow.
 
-# Java Garbage Collection
+# 🧩Java Garbage Collection
 
 Java garbage collection is an automatic memory management process where unused objects are identified and removed to free memory, using techniques like mark-and-sweep.
 
-# Pending intend
+# 🧩Pending intend
 
 A PendingIntent is a tokenized intent that allows another application (e.g., a system service) to perform an action on behalf of your application. It's commonly used in notifications and alarms.
 
-# ViewModel Use and Features
+# 🧩ViewModel Use and Features
 - ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
 - ViewModel can be created with activity context or fragment context.When a ViewModel object is created, it is stored inside Activity OR FragmentManager.
 - ViewModel is part of Android's Jetpack Architecture Components and is used to store and manage UI-related data in a lifecycle-conscious way. It helps survive configuration changes (like screen rotation) without losing data.
@@ -228,23 +223,23 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
 
 - With ViewModel:The same ViewModel instance is used even after rotation.The counter value is retained.
 
-# Doze and App Standby
+# 🧩Doze and App Standby
 
     Doze: Optimizes battery by deferring background tasks when the device is idle.
     App Standby: Limits background activity for unused apps.
 
-# Git Merge and Git Rebase
+# 🧩Git Merge and Git Rebase
 
     Merge: Combines branches, preserving commit history.
     Rebase: Reapplies commits from one branch onto another, creating a linear history.
 
-# Runnable vs Callable
+# 🧩Runnable vs Callable
 
     Runnable: Represents a task with no return value.
     Callable: Represents a task with a return value and can throw exceptions.
 
 
-# Live Data
+# 🧩Live Data
     - LiveData is part of the Android Architecture, jetpack Components and is designed to hold and observe data changes.
     - For communication between components within the same app
     🔹 LiveData updates UI automatically – No need for manual setText()
@@ -277,7 +272,7 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
 2️⃣ StateFlow – Hot Stream (Always Holds Latest Value)
 3️⃣ SharedFlow – Hot Stream (For One-Time Events)
 
-# Room 
+# 🧩Room 
 Room is a SQLite-based persistence library in Android that provides an abstraction layer to make database operations easier, safer, and more efficient.
 
 Why Use Room?
@@ -308,7 +303,7 @@ abstract class AppDatabase : RoomDatabase() {
 }
 
 ```
-Android App Security Best Practices
+## 🧩Android App Security Best Practices
  1.Encrypt Sensitive Data
 
     Use EncryptedSharedPreferences instead of regular SharedPreferences.
@@ -322,7 +317,7 @@ Android App Security Best Practices
     - Renames classes/methods to make decompiled code unreadable.
     - Removes unused code (shrinking).
 
- # Memory Management in Android   
+ # 🧩Memory Management in Android   
  - user LeakCanary for detecting leaks.
  - Unregister Listeners in onDestroy()
  - Use Glide or Coil for image loading (automatic memory optimization).
