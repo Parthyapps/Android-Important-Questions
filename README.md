@@ -3,8 +3,9 @@
 ## Core Building Blocks or Fundamental Components:
 
 - **Activity** - An Activity is a single screen with a user interface (UI).
-  
-             - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
+
+      - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
+
 - **Services**
 
       - Long running background process. or Execute background tasks without a UI
@@ -85,6 +86,20 @@
     - **onDestroyView()**: Removes the fragment's UI.
     - **onDestroy()**: Releases resources before the fragment is destroyed.
     - **onDetach()**: Detaches the fragment from its hosting activity.
+    
+    Activity → Fragment (Send Data) - Pass data via Bundle (during fragment creation)
+    Both Ways passing data - Shared ViewModel (Recommended in MVVM)
+
+# FragmentManager Use Cases
+# The FragmentManager handles:
+
+    Adding, replacing, or removing fragments.
+    Managing the back stack for fragment navigation.
+
+# Get FragmentManager:
+
+    From an Activity: Use supportFragmentManager.
+    From a Fragment: Use parentFragmentManager or childFragmentManager (for nested fragments).
 
 
 - **Intents**
@@ -230,16 +245,6 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
     Runnable: Represents a task with no return value.
     Callable: Represents a task with a return value and can throw exceptions.
 
-# FragmentManager Use Cases
-# The FragmentManager handles:
-
-    Adding, replacing, or removing fragments.
-    Managing the back stack for fragment navigation.
-
-# Get FragmentManager:
-
-    From an Activity: Use supportFragmentManager.
-    From a Fragment: Use parentFragmentManager or childFragmentManager (for nested fragments).
 
 # Live Data
     - LiveData is part of the Android Architecture, jetpack Components and is designed to hold and observe data changes.
