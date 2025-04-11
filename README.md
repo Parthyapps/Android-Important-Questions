@@ -49,36 +49,42 @@
       EventBus / RxJava → For app-wide event-based communication.
 
 ## Activity Lifecycle:
-- **onCreate()**: Called when the activity is first created. This is where initialization occurs.
-- **onStart()**: Called when the activity becomes visible to the user.
-- **onResume()**: Called when the activity starts interacting with the user. This is typically where animations and other things that require CPU resources should be started.
-- **onPause()**: Called when the activity is partially obscured by another activity. This is a good place to commit unsaved changes or pause ongoing processes.
-- **onStop()**: Called when the activity is no longer visible to the user.
-- **onDestroy()**: Called before the activity is destroyed. This is where you should release any resources that aren't needed anymore.
-- **OnRestart()**: Called when the activity has been stopped and is restarting again.
-  **Activity Launch Modes**
+    - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
+    - **onStart()**: Called when the activity becomes visible to the user.
+    - **onResume()**: Called when the activity starts interacting with the user. This is typically where animations and other things that require CPU resources should be started.
+    - **onPause()**: Called when the activity is partially obscured by another activity. This is a good place to commit unsaved changes or pause ongoing processes.
+    - **onStop()**: Called when the activity is no longer visible to the user.
+    - **onDestroy()**: Called before the activity is destroyed. This is where you should release any resources that aren't needed anymore.
+    - **OnRestart()**: Called when the activity has been stopped and is restarting again.
+
+     Activity (A - B)
   
-    Define how a new Activity instance is created:
-  
-        standard (default): Creates a new instance every time.
-        singleTop: Reuses the existing instance if it’s at the top of the stack.
-        singleTask: Reuses the existing instance in the task (clears activities above it).
-        singleInstance: Creates a new task with only this Activity.
+     - (A)- oncreate()-> onstart() -> onResume() -> OnPause()
+     - (B)- oncreate()-> onstart() -> onResume() - onstop() (A)
+     - (BackToA) (B) - onRestart() -> onStart() -> onResume()
+      
+        **Activity Launch Modes**
+      Define how a new Activity instance is created:
+    
+          standard (default): Creates a new instance every time.
+          singleTop: Reuses the existing instance if it’s at the top of the stack.
+          singleTask: Reuses the existing instance in the task (clears activities above it).
+          singleInstance: Creates a new task with only this Activity.
 
 ## Fragment Lifecycle:
- * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
-- **onAttach()**: Attaches the fragment to its hosting activity.
-- **onCreate()**: Initializes the fragment.
-- **onCreateView()**: Creates the fragment's UI.
-- **onViewCreated()**: Called after onCreateView() to initialize UI components.
-- **onActivityCreated()**: Activity's onCreate() has completed; fragment's activity is fully initialized.
-- **onStart()**: Fragment becomes visible.
-- **onResume()**: Fragment starts interacting with the user.
-- **onPause()**: Fragment no longer interacts with the user.
-- **onStop()**: Fragment is no longer visible.
-- **onDestroyView()**: Removes the fragment's UI.
-- **onDestroy()**: Releases resources before the fragment is destroyed.
-- **onDetach()**: Detaches the fragment from its hosting activity.
+     * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
+    - **onAttach()**: Attaches the fragment to its hosting activity.
+    - **onCreate()**: Initializes the fragment.
+    - **onCreateView()**: Creates the fragment's UI.
+    - **onViewCreated()**: Called after onCreateView() to initialize UI components.
+    - **onActivityCreated()**: Activity's onCreate() has completed; fragment's activity is fully initialized.
+    - **onStart()**: Fragment becomes visible.
+    - **onResume()**: Fragment starts interacting with the user.
+    - **onPause()**: Fragment no longer interacts with the user.
+    - **onStop()**: Fragment is no longer visible.
+    - **onDestroyView()**: Removes the fragment's UI.
+    - **onDestroy()**: Releases resources before the fragment is destroyed.
+    - **onDetach()**: Detaches the fragment from its hosting activity.
 
 
 - **Intents**
