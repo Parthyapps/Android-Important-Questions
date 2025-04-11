@@ -90,14 +90,11 @@
     Activity → Fragment (Send Data) - Pass data via Bundle (during fragment creation)
     Both Ways passing data - Shared ViewModel (Recommended in MVVM)
 
-# FragmentManager Use Cases
-# The FragmentManager handles:
-
+    FragmentManager Use Cases
     Adding, replacing, or removing fragments.
     Managing the back stack for fragment navigation.
 
-# Get FragmentManager:
-
+    Get FragmentManager:
     From an Activity: Use supportFragmentManager.
     From a Fragment: Use parentFragmentManager or childFragmentManager (for nested fragments).
 
@@ -115,36 +112,37 @@
         Pending Intent → Used for deferred execution, like notifications and alarms.
 
 ## Jetpack Components:
-- **ViewModel**: Part of the Android Architecture Components. It is used to store and manage UI-related data in a lifecycle-aware manner, surviving configuration changes such as screen rotations.Prevents data loss on rotation
-- **LiveData**: Observes and reacts to UI data changes. It’s lifecycle-aware, meaning it only updates active observers.
-- **Navigation Component**: Simplifies the implementation of navigation between screens and supports features like deep linking and safe arguments.
-- **Paging**: A component that allows users to load and display large data sets with infinite scrolling
-- **Jetpack Compose**: A Kotlin-based toolkit for building native UI
-- **Android KTX**: A library that increases support for the Kotlin language for app development 
-- **WorkManager**: Handles reliable background tasks (e.g., syncing, file uploads).
-- **Room**: An abstraction layer over SQLite that handles database creation and management with type-safe access to database queries.
-- **DataBinding**: Reduces findViewById() calls & connects UI elements with data
-- **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
+      - **ViewModel**: Part of the Android Architecture Components.
+        It is used to store and manage UI-related data in a lifecycle-aware manner, surviving configuration changes such as screen rotations.Prevents data loss on rotation
+      - **LiveData**: Observes and reacts to UI data changes. It’s lifecycle-aware, meaning it only updates active observers.
+      - **Navigation Component**: Simplifies the implementation of navigation between screens and supports features like deep linking and safe arguments.
+      - **Paging**: A component that allows users to load and display large data sets with infinite scrolling
+      - **Jetpack Compose**: A Kotlin-based toolkit for building native UI
+      - **Android KTX**: A library that increases support for the Kotlin language for app development 
+      - **WorkManager**: Handles reliable background tasks (e.g., syncing, file uploads).
+      - **Room**: An abstraction layer over SQLite that handles database creation and management with type-safe access to database queries.
+      - **DataBinding**: Reduces findViewById() calls & connects UI elements with data
+      - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
 ## RecyclerView
-- A more advanced and flexible version of ListView,  It is used to efficiently display large lists of data by reusing views instead of creating new ones every time.
-  Adapter and ViewHolder patterns are key concepts for recycling views and improving performance.
-- DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
-- Async Image Loading:Use image-loading libraries like Glide or Picasso to load images asynchronously, preventing UI freezes.
-- RecyclerView LinearLayoutManager, GridLayoutManager
-- 1. Key Features of RecyclerView
-
-✅ View Recycling – Reuses off-screen views to save memory
-✅ Layout Managers – Supports linear, grid, and staggered layouts
-✅ Animations – Built-in item animations (add/remove/change)
-✅ Flexible Adapters – Customizable data binding with RecyclerView.Adapter
-✅ Item Decorations – Add dividers, spacing, or custom decorations
-✅ Efficient Updates – DiffUtil for smart data changes
-
+      - A more advanced and flexible version of ListView,  It is used to efficiently display large lists of data by reusing views instead of creating new ones every time.
+        Adapter and ViewHolder patterns are key concepts for recycling views and improving performance.
+      - DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
+      - Async Image Loading:Use image-loading libraries like Glide or Picasso to load images asynchronously, preventing UI freezes.
+      - RecyclerView LinearLayoutManager, GridLayoutManager
+      - 1. Key Features of RecyclerView
+      
+      ✅ View Recycling – Reuses off-screen views to save memory
+      ✅ Layout Managers – Supports linear, grid, and staggered layouts
+      ✅ Animations – Built-in item animations (add/remove/change)
+      ✅ Flexible Adapters – Customizable data binding with RecyclerView.Adapter
+      ✅ Item Decorations – Add dividers, spacing, or custom decorations
+      ✅ Efficient Updates – DiffUtil for smart data changes
+      
 ## Networking
-- Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
-OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
-Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
+      - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
+      OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
+      Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
 
 ## Data Storage:
 - SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (async) and commit() (sync)
