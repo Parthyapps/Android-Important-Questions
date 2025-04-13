@@ -277,9 +277,10 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
     Callable: Represents a task with a return value and can throw exceptions.
 
 
-# 🧩Live Data
-    - LiveData is part of the Android Architecture, jetpack Components and is designed to hold and observe data changes.
-    - For communication between components within the same app
+# 🧩Live Data and Flow
+    Both LiveData and Flow are used for asynchronous data streaming in Android, but they have key differences in design and use cases.
+     - LiveData is an observable data holder class that is lifecycle-aware (part of Android Architecture Components).
+     - For communication between components within the same app
     🔹 LiveData updates UI automatically – No need for manual setText()
     🔹 Prevents memory leaks – Only updates UI when the Activity is active -  active lifecycle state (e.g., STARTED or RESUMED
     ✅ Lifecycle-aware – Prevents memory leaks & crashes
@@ -298,13 +299,16 @@ A PendingIntent is a tokenized intent that allows another application (e.g., a s
         })
 
 # 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
+- Flow is a Kotlin Coroutines feature for asynchronous cold streams (emits values sequentially).
 
 - Not Lifecycle-Aware (by default):
 - Platform-independent
 - Designed for coroutines
 - Provides built-in support for handling errors through operators. 
-- Flow" is a way to handle asynchronous data streams, allowing you to emit multiple values sequentially over time, similar to sequences but with support for suspending function  
-- Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android. They are part of Kotlin Coroutines and are useful alternatives to LiveData.
+- Flow" is a way to handle asynchronous data streams, allowing you to emit multiple values sequentially over time,
+   similar to sequences but with support for suspending function  
+- Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android.
+   They are part of Kotlin Coroutines and are useful alternatives to LiveData.
 
 1️⃣ Flow – Cold Stream (On-Demand)
 2️⃣ StateFlow – Hot Stream (Always Holds Latest Value)
@@ -366,6 +370,8 @@ abstract class AppDatabase : RoomDatabase() {
  - Use Glide or Coil for image loading (automatic memory optimization).
  - Check with Android Profiler (in Android Studio).
  - Use ActivityManager to get memory info:
+ - LeakCanary (for memory leak detection).
+ - Android profiler - for monitoring your app’s CPU, Memory, Network, and Energy usage in real time
 
 # Clean Architecture
 - Clean Architecture is a software design pattern that organizes code into distinct layers, separating concerns and dependencies. The layers are typically:
