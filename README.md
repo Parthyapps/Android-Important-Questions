@@ -180,8 +180,14 @@
 - Hilt: A simpler way to integrate Dagger 2, making it easier to set up and use in Android projects.
 - Koin: A lightweight dependency injection library for Kotlin that’s easy to learn and integrate.
 
-## 🧩**Multithreading and Background Work:**
+- @Inject	Marks a dependency to be injected
+- @Provides	Defines how to create a dependency
+- @Module	Groups dependency providers
+- @InstallIn	Specifies component lifetime
+- @AndroidEntryPoint	Enables injection in Android classes
 
+## 🧩**Multithreading and Background Work:**
+-
 - Handler and Looper: Used for communicating between background threads and the main thread.
 - WorkManager: Manages background tasks that should run even if the app is closed or the device is rebooted.
 - ![image](https://github.com/user-attachments/assets/c5b8abf1-5ab2-4c0c-b25a-99b4901d8888)
@@ -212,9 +218,11 @@
 # 🧩Parcelable:
 
     Android-specific interface (android.os.Parcelable).
+    Use Parcelable for Android inter-component communication (Activities, Fragments)
     Used manual implementation for reading/writing data, making it much faster than Serializable.
     More optimized for Android IPC (Inter-Process Communication).
     Requires manual implementation.
+    Kotlin Parcelize (Simpler Parcelable) @Parcelize  // Auto-generates Parcelable code
 
 # 🧩MVVM, MVC, MVP
 
