@@ -29,7 +29,7 @@
              onUnbind() - Called when all components have unbound
              onDestroy() - Called when service is terminating
       
-  [image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
+- [image](https://github.com/user-attachments/assets/758abccb-a8bd-4b64-a327-3a7e5d7c156f)
       
 - 🧩**Content Providers** - Used to share data between the apps
   
@@ -46,6 +46,7 @@
       WorkManager → For background tasks that must complete (e.g., syncing, file uploads).
       LiveData / Flow → For real-time data updates within the app.
       EventBus / RxJava → For app-wide event-based communication.
+      JobScheduler / AlarmManager -> (For Exact Timing) , Time-sensitive tasks (e.g., alarms, exact scheduling).
 
 ## 🧩**Activity Lifecycle:**
     - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
@@ -108,7 +109,7 @@
         Broadcast Intent → Used to send system-wide messages (e.g., battery low, network change).
         Pending Intent → Used for deferred execution, like notifications and alarms.
 
-## 🧩**Jetpack Components:**
+## 🧩**Android Architecture Components or Jetpack Components:**
    - **ViewModel**: Part of the Android Architecture Components.
         It is used to store and manage UI-related data in a lifecycle-aware manner, surviving configuration changes such as screen rotations.Prevents data loss on rotation
       - **LiveData**: Observes and reacts to UI data changes. It’s lifecycle-aware, meaning it only updates active observers.
@@ -122,13 +123,15 @@
       - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
 ## 🧩**RecyclerView**
-      - A more advanced and flexible version of ListView,  It is used to efficiently display large lists of data by reusing views instead of creating new ones every time.
-        Adapter and ViewHolder patterns are key concepts for recycling views and improving performance.
+      - A more advanced and flexible version of ListView, It’s used to display scrollable lists (like contacts, messages, 
+      or social media feeds) but with better performance and flexibility.
+      - Adapter and ViewHolder patterns are key concepts for recycling views and improving performance.
+      - ViewHolder improves performance by caching views  
       - DiffUtil: Used for calculating the difference between two lists and updating only the items that have changed.
       - Async Image Loading:Use image-loading libraries like Glide or Picasso to load images asynchronously, preventing UI freezes.
       - RecyclerView LinearLayoutManager, GridLayoutManager
-      - 1. Key Features of RecyclerView
       
+      1. Key Features of RecyclerView
       ✅ View Recycling – Reuses off-screen views to save memory
       ✅ Layout Managers – Supports linear, grid, and staggered layouts
       ✅ Animations – Built-in item animations (add/remove/change)
@@ -141,9 +144,21 @@
     - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
     - OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
     - Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
+    
+    # HTTP Libraries
+    Old: HttpURLConnection (Java) - Low-level, manual handling
+    Modern:
+      - Retrofit (Recommended) - Type-safe REST client
+      - Volley - Google's HTTP library (simpler than Retrofit)
+      - Ktor - Kotlin-native alternative, Supports multiplatform (Android, iOS, backend)
+    JSON Parsing
+      - Gson (Google) - Simple, reflection-based
+      - Moshi (Square) - More efficient, Kotlin-friendly
+      - kotlinx.serialization (Official Kotlin)
+    
 
 ## 🧩**Data Storage:**
-- SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (async) and commit() (sync)
+- SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (asynchronous) and commit() (synchronous)
 - DataStore (Jetpack): Modern alternative to SharedPreferences	
 - Room Database: Structured storage using SQL with support for complex queries.
 - SQLite: A database option for more manual management of structured data.
@@ -295,6 +310,11 @@ Why Use Room?
 ✅ Provides compile-time checks for SQL queries.
 ✅ Supports LiveData, Flow, and Coroutines for seamless UI updates.
 ✅ Manages database versioning with migrations
+
+    - Entity (Defines table structure)
+    - DAO (Data Access Object - queries)
+    - Database (Main access point)
+    
 ```
 @Entity
 data class User(
