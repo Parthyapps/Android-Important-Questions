@@ -6,7 +6,8 @@
    - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
      
 - 🧩**Services** - Long running background process. or Execute background tasks without a UI
-        Lifecycle of Android Services
+
+      Lifecycle of Android Services
       Types of services
         1. Foreground Services Example: music player, file download
         2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations;
@@ -49,10 +50,12 @@
       JobScheduler / AlarmManager -> (For Exact Timing) , Time-sensitive tasks (e.g., alarms, exact scheduling).
 
 ## 🧩**Activity Lifecycle:**
-   - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
+    - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
     - **onStart()**: Called when the activity becomes visible to the user.
-    - **onResume()**: Called when the activity starts interacting with the user. This is typically where animations and other things that require CPU resources should be started.
-    - **onPause()**: Called when the activity is partially obscured by another activity. This is a good place to commit unsaved changes or pause ongoing processes.
+    - **onResume()**: Called when the activity starts interacting with the user.
+      This is typically where animations and other things that require CPU resources should be started.
+    - **onPause()**: Called when the activity is partially obscured by another activity. 
+      This is a good place to commit unsaved changes or pause ongoing processes.
     - **onStop()**: Called when the activity is no longer visible to the user.
     - **onDestroy()**: Called before the activity is destroyed. This is where you should release any resources that aren't needed anymore.
     - **OnRestart()**: Called when the activity has been stopped and is restarting again.
