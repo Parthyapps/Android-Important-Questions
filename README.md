@@ -3,16 +3,16 @@
 ## Core Building Blocks or Fundamental Components:
 
 - 🧩**Activity** - An Activity is a single screen with a user interface (UI).
-  
-      - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
+   - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
+     
 - 🧩**Services** - Long running background process. or Execute background tasks without a UI
-
-
         Lifecycle of Android Services
       Types of services
         1. Foreground Services Example: music player, file download
-        2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations; use JobScheduler or WorkManager instead
-        3. Bound Services: ongoing interaction between your UI and background operations, especially when multiple components need to share the same service functionality.
+        2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations;
+          use JobScheduler or WorkManager instead
+        3. Bound Services: ongoing interaction between your UI and background operations,
+       especially when multiple components need to share the same service functionality.
         
        Started Service Lifecycle 
       
@@ -49,7 +49,7 @@
       JobScheduler / AlarmManager -> (For Exact Timing) , Time-sensitive tasks (e.g., alarms, exact scheduling).
 
 ## 🧩**Activity Lifecycle:**
-    - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
+   - **onCreate()**: Called when the activity is first created. This is where initialization occurs.
     - **onStart()**: Called when the activity becomes visible to the user.
     - **onResume()**: Called when the activity starts interacting with the user. This is typically where animations and other things that require CPU resources should be started.
     - **onPause()**: Called when the activity is partially obscured by another activity. This is a good place to commit unsaved changes or pause ongoing processes.
