@@ -125,6 +125,25 @@
       - **DataBinding**: Reduces findViewById() calls & connects UI elements with data
       - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
+# 🧩ViewModel Use and Features
+- ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
+- To create viewmodel use viewModelProvider and  if ViewModel exits in ViewModelStore is linked to ViewModelStoreOwner
+- Activity/fragment provides its owner to viewmodel provider, Each viewModelStoreOwner holds its own viewModelStore  
+
+      - Activity/Fragment
+        ⬇
+      [ViewModelStoreOwner]  
+        ⬇
+      [ViewModelStore]  ← stores all ViewModels
+        ⬇
+      ViewModelProvider  ← creates/fetches ViewModels
+
+- Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest to handle configuration changes.
+![image](https://github.com/user-attachments/assets/8bdee800-74b0-451c-9b0c-ea5cba670d9f)
+
+- Without ViewModel: When the screen rotates, onCreate() is called again, and the counter resets to 0.
+- With ViewModel:The same ViewModel instance is used even after rotation.The counter value is retained.
+
 ## 🧩**RecyclerView**
       - A more advanced and flexible version of ListView, It’s used to display scrollable lists (like contacts, messages, 
       or social media feeds) but with better performance and flexibility.
@@ -147,10 +166,9 @@
     - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
     - OkHttp Interceptors in Android are powerful tools that allow you to intercept and modify HTTP requests and responses
     - They provide a flexible way to customize network behavior, add custom headers, log requests and responses, 
-    implement authentication mechanisms, and perform other network-related tasks
+       implement authentication mechanisms, and perform other network-related tasks
     - Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
-
-
+    
     Types of Interceptors
     Application Interceptor
         Runs once per request (even if retried).
@@ -179,7 +197,8 @@
     
 
 ## 🧩**Data Storage:**
-- SharedPreferences: Simple key-value storage for saving small amounts of primitive data. ✅ two methods apply() (asynchronous) and commit() (synchronous)
+- SharedPreferences: Simple key-value storage for saving small amounts of primitive data.
+-  ✅ two methods apply() (asynchronous) and commit() (synchronous)
 - DataStore (Jetpack): Modern alternative to SharedPreferences	
 - Room Database: Structured storage using SQL with support for complex queries.
 - SQLite: A database option for more manual management of structured data.
@@ -215,20 +234,6 @@
 
 - Coroutines provide a modern approach to handle background work more efficiently compared to older methods like AsyncTask.
     
-## 🧩**Android Context Two types**
-- 1.Application Context - need to access resources that are not tied to any specific activity, use the Application context.
-- 2.Activity Context - need to access resources that are tied to a specific activity, use the Activity context
-- It allows us to access resources.
-- It allows us to interact with other Android components by sending messages.
-- It gives you information about your app environment.
-
-## 🧩Image Loading libraries
-- Picasso
-- Glide
-- Fresco
-- COIL (Coroutine Image Loader)
-- UIL (Universal Image Loader)
-
 # 🧩Serializable:
   Both Serializable and Parcelable are used for object serialization in Android.
  
@@ -250,58 +255,15 @@
     MVC: Separates UI (View), Business Logic (Controller), and Data (Model).
     MVP: Similar to MVC, but Presenter handles business logic and updates the View.
     MVVM: ViewModel holds UI-related data and logic, and updates the View through LiveData/Flow.
-
-# 🧩Java Garbage Collection
-
-Java garbage collection is an automatic memory management process where unused objects are identified and removed to free memory, using techniques like mark-and-sweep.
-
-# 🧩Pending intend
-
-A PendingIntent is a tokenized intent that allows another application (e.g., a system service) to perform an action on behalf of your application. It's commonly used in notifications and alarms.
-
-# 🧩ViewModel Use and Features
-- ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
-- To create viewmodel use viewModelProvider and  if ViewModel exits in ViewModelStore is linked to ViewModelStoreOwner
-- Activity/fragment provides its owner to viewmodel provider, Each viewModelStoreOwner holds its own viewModelStore  
-
-      - Activity/Fragment
-        ⬇
-      [ViewModelStoreOwner]  
-        ⬇
-      [ViewModelStore]  ← stores all ViewModels
-        ⬇
-      ViewModelProvider  ← creates/fetches ViewModels
-
-- Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest to handle configuration changes.
-![image](https://github.com/user-attachments/assets/8bdee800-74b0-451c-9b0c-ea5cba670d9f)
-
-- Without ViewModel: When the screen rotates, onCreate() is called again, and the counter resets to 0.
-- With ViewModel:The same ViewModel instance is used even after rotation.The counter value is retained.
-
-# 🧩Doze and App Standby
-
-    Doze: Optimizes battery by deferring background tasks when the device is idle.
-    App Standby: Limits background activity for unused apps.
-
-# 🧩Git Merge and Git Rebase
-
-    Merge: Combines branches, preserving commit history.
-    Rebase: Reapplies commits from one branch onto another, creating a linear history.
-
-# 🧩Runnable vs Callable
-
-    Runnable: Represents a task with no return value.
-    Callable: Represents a task with a return value and can throw exceptions.
-
-
+    
 # 🧩Live Data and Flow
     What? A simple "data holder" that updates the UI only when the screen is active (lifecycle-aware).
          - For communication between components within the same app
     Why? Prevents crashes & memory leaks by auto-unsubscribing when the app closes.
     Best for: Basic UI updates (e.g., showing text, lists).
 
--DisAdv: LiveData does not have built-in support for error handling
- Can’t handle complex async tasks (like combining multiple data sources).
+  DisAdv: LiveData does not have built-in support for error handling
+  Can’t handle complex async tasks (like combining multiple data sources).
  
      // MutableLiveData is a LiveData whose value can be changed
     private val _textLiveData = MutableLiveData<String>()
@@ -369,9 +331,10 @@ abstract class AppDatabase : RoomDatabase() {
 ```
 ## 🧩Android App Security Best Practices
  1.Encrypt Sensitive Data
-
+ 
     Use EncryptedSharedPreferences instead of regular SharedPreferences.
     For local databases, use SQLCipher or Room with encryption.
+    
  2.Secure Network Communication Security:
    
     Always use HTTPS (TLS 1.2+).
@@ -389,6 +352,45 @@ abstract class AppDatabase : RoomDatabase() {
  - Use ActivityManager to get memory info:
  - LeakCanary (for memory leak detection).
  - Android profiler - for monitoring your app’s CPU, Memory, Network, and Energy usage in real time
+
+## 🧩**Android Context Two types**
+- 1.Application Context - need to access resources that are not tied to any specific activity, use the Application context.
+- 2.Activity Context - need to access resources that are tied to a specific activity, use the Activity context
+- It allows us to access resources.
+- It allows us to interact with other Android components by sending messages.
+- It gives you information about your app environment.
+
+## 🧩Image Loading libraries
+- Picasso
+- Glide
+- Fresco
+- COIL (Coroutine Image Loader)
+- UIL (Universal Image Loader)
+
+# 🧩Java Garbage Collection
+
+Java garbage collection is an automatic memory management process where unused objects are identified and
+removed to free memory, using techniques like mark-and-sweep.
+
+# 🧩Pending intend
+
+A PendingIntent is a tokenized intent that allows another application (e.g., a system service) to perform an action on behalf of your application.
+It's commonly used in notifications and alarms.
+
+# 🧩Doze and App Standby
+
+    Doze: Optimizes battery by deferring background tasks when the device is idle.
+    App Standby: Limits background activity for unused apps.
+
+# 🧩Git Merge and Git Rebase
+
+    Merge: Combines branches, preserving commit history.
+    Rebase: Reapplies commits from one branch onto another, creating a linear history.
+
+# 🧩Runnable vs Callable
+
+    Runnable: Represents a task with no return value.
+    Callable: Represents a task with a return value and can throw exceptions.
 
 # Clean Architecture
 - Clean Architecture is a software design pattern that organizes code into distinct layers, separating concerns and dependencies. The layers are typically:
