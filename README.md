@@ -145,8 +145,26 @@
 ## 🧩**Networking**
      
     - Retrofit: A type-safe HTTP client for Android used for making network requests and parsing responses using converters like Gson or Moshi.
-    - OkHttp: A powerful HTTP client that supports features like interceptors for handling custom headers and logging.
+    - OkHttp Interceptors in Android are powerful tools that allow you to intercept and modify HTTP requests and responses
+    - They provide a flexible way to customize network behavior, add custom headers, log requests and responses, 
+    implement authentication mechanisms, and perform other network-related tasks
     - Handling errors (e.g., network failures, HTTP status codes) and using try-catch or custom error handling mechanisms.
+
+
+    Types of Interceptors
+    Application Interceptor
+        Runs once per request (even if retried).
+        Good for logging, adding auth headers.
+
+    Network Interceptor
+        Runs after redirections (closer to the actual network call).
+        Good for monitoring raw traffic.
+
+ Why Do We Need Interceptors?
+✅ Add Headers (e.g., Auth Token)
+✅ Log Requests/Responses (Debugging)
+✅ Modify Responses (e.g., Caching, Error Handling)
+✅ Retry Failed Requests (Auto-refresh token)   
     
     # HTTP Libraries
     Old: HttpURLConnection (Java) - Low-level, manual handling
