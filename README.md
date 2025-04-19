@@ -1,6 +1,6 @@
 # Android : Most Important Topics
 
-## Core Building Blocks or Fundamental Components:
+## Core Building Blocks or Fundamental or Android Components:
 
 - 🧩**Activity** - An Activity is a single screen with a user interface (UI).
    - Lifecycle: onCreate(), onStart(), onResume(), onPause(), onStop(), onDestroy()
