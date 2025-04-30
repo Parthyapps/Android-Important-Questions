@@ -125,20 +125,13 @@
       - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
 # 🧩ViewModel Use and Features
-- ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
-- To create viewmodel use viewModelProvider and  if ViewModel exits in ViewModelStore is linked to ViewModelStoreOwner
-- Activity/fragment provides its owner to viewmodel provider, Each viewModelStoreOwner holds its own viewModelStore  
+- A ViewModel survives configuration changes (e.g., screen rotation, theme/font changes, multi-window mode).
+- It is destroyed only when its owner (Activity/Fragment) is permanently finished (e.g., user presses back or finish() is called).
+- A ViewModel is not just for handling screen rotation—it's a powerful pattern for decoupling business logic from UI,
+-     ViewModelStore – A storage system tied to the UI's lifecycle.
+      ViewModelProvider – Retrieves or creates ViewModels from the ViewModelStore.
 
-      - Activity/Fragment
-        ⬇
-      [ViewModelStoreOwner]  
-        ⬇
-      [ViewModelStore]  ← stores all ViewModels
-        ⬇
-      ViewModelProvider  ← creates/fetches ViewModels
-
-- Use ViewModel, onSaveInstanceState(), or android:configChanges in the manifest to handle configuration changes.
-![image](https://github.com/user-attachments/assets/8bdee800-74b0-451c-9b0c-ea5cba670d9f)
+![image](https://github.com/user-attachments/assets/e9e28bb0-1336-4c42-84d8-0ea5e9e2eaf6)
 
 - Without ViewModel: When the screen rotates, onCreate() is called again, and the counter resets to 0.
 - With ViewModel:The same ViewModel instance is used even after rotation.The counter value is retained.
