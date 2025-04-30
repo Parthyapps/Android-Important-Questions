@@ -12,8 +12,7 @@
         1. Foreground Services Example: music player, file download
         2. Background Services: Android 8.0 (Oreo) restrictions: Background services have limitations;
           use JobScheduler or WorkManager instead
-        3. Bound Services: ongoing interaction between your UI and background operations,
-       especially when multiple components need to share the same service functionality.
+        3. Bound Services:  type of service that allows other application components (like activities) to connect to it, interact with it, and even perform interprocess communication (IPC)
         
        Started Service Lifecycle 
       
