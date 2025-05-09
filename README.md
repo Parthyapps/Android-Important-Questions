@@ -206,6 +206,29 @@
         WorkManager + REST APIs (for cloud data).
 
 ## 🧩**Dependency Injection:**
+- 🚀 What is Dependency Injection & Why Should You Care?
+- We've all written classes that create the objects they use. But what happens when your app grows? Tight coupling, harder testing, and poor scalability creep in.
+
+- 💡 That’s where Dependency Injection (DI) comes in.
+
+- Dependency Injection is a design pattern where an object’s dependencies are provided from the outside rather than the object creating them itself.
+
+      🔧 Without DI:
+       class Car {
+           private val engine = Engine()
+       }
+
+- ✅ With DI:
+
+      class Car(private val engine: Engine)
+
+- Now Car doesn’t care how Engine is created – making it easier to test, mock, and replace.
+
+- ✅ Why DI?
+- 🔁 Decouples components
+- 🔍 Improves testability
+- 📦 Supports better modular design
+- 🚀 Helps scale complex applications
 
 - Dagger 2: A compile-time dependency injection framework providing dependency management and injection with minimal runtime overhead.
 - It's based on annotations and code generation.
