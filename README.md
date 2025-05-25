@@ -407,6 +407,21 @@ It's commonly used in notifications and alarms.
     Runnable: Represents a task with no return value.
     Callable: Represents a task with a return value and can throw exceptions.
 
+
+# 🧩EXO Player 
+- ExoPlayer is a powerful, open-source media playback library by Google, specifically for Android. Unlike MediaPlayer, ExoPlayer:
+- MPEG-DASH (Dynamic Adaptive Streaming over HTTP) .mpd (Media Presentation Description)
+
+      - Is more customizable and extensible.
+      - Supports DASH, SmoothStreaming, and HLS out of the box.
+      - Is maintained by Google and used in YouTube and other apps.
+      - Can be updated independently from Android OS.
+  
+  - MediaItem (used in newer APIs) represents a media file or stream, containing metadata like URI and title.
+  - MediaSource was used in older versions to represent media to be played (like ProgressiveMediaSource, HlsMediaSource). In newer APIs, MediaItem simplifies this.
+
+    
+
 # Clean Architecture
 - Clean Architecture is a software design pattern that organizes code into distinct layers, separating concerns and dependencies. The layers are typically:
 - 1.Presentation Layer: Handles the UI and user interactions (e.g., Activities, Fragments, ViewModel).
