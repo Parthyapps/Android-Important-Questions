@@ -408,7 +408,7 @@ It's commonly used in notifications and alarms.
     Callable: Represents a task with a return value and can throw exceptions.
 
 
-# 🧩EXO Player 
+# 🧩EXO Player now we have Media3 library
 - ExoPlayer is a powerful, open-source media playback library by Google, specifically for Android. Unlike MediaPlayer, ExoPlayer:
 - MPEG-DASH (Dynamic Adaptive Streaming over HTTP) .mpd (Media Presentation Description)
 
