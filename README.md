@@ -125,6 +125,9 @@
       - **ViewBinding and DataBinding:** ViewBinding is a simpler approach for binding views, while DataBinding allows more complex UI bindings, supporting data binding expressions in XML layouts.
 
 # 🧩ViewModel Use and Features
+- viewmodel is part of activity/fragment, and activity/fragment is owner of the viewmodel Store.
+- viewmodle provider - uses the ViewModelStore to find an existing ViewModel instance based on its class.
+- If no instance exists, ViewModelProvider creates a new one using a ViewModelProvider.Factory and stores it in the ViewModelStore. 
 - A ViewModel survives configuration changes (e.g., screen rotation, theme/font changes, multi-window mode).
 - It is destroyed only when its owner (Activity/Fragment) is permanently finished (e.g., user presses back or finish() is called).
 - A ViewModel is not just for handling screen rotation—it's a powerful pattern for decoupling business logic from UI,
