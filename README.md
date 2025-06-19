@@ -316,6 +316,11 @@
 3️⃣ SteteFlow – Hot Stream (For One-Time Events Holds a single "state" value (like LiveData but for coroutines))
     - UI state (e.g., loading, success, error).
 
+    map → Transform data (1:1).
+    filter → Skip unwanted items.
+    flatMap → Handle nested flows (e.g., API chaining).
+    flatMapConcat vs flatMapMerge vs flatMapLatest → Choose based on concurrency needs.
+
 # 🧩Room 
 Room is a SQLite-based persistence library in Android that provides
 an abstraction layer to make database operations easier, safer, and more efficient.
