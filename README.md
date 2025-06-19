@@ -294,10 +294,16 @@
         })
 
 # 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
-- Flow is a Kotlin Coroutines feature for asynchronous cold streams (emits values sequentially).
+- Flow is a cold asynchronous stream in Kotlin Coroutines that emits multiple values sequentially.
+- Works with suspending functions.
+- Supports backpressure (handles fast producers & slow consumers).
+- Can be transformed (map, filter, debounce, etc.).
+- Can be cancelled when the coroutine scope is destroyed.
 -     What - A Kotlin "data stream" for advanced async operations (like RxJava but simpler).
       Why -  Handles backpressure, supports threading, and works outside Android.
       Best for: Database/network operations, complex data transformations.
+  
+![image](https://github.com/user-attachments/assets/1b3f0d8f-21b8-4dd7-a549-2ea2944ac740)
 
 - Provides built-in support for handling errors through operators.
 - Powerful (supports map, filter, merge, etc.).
