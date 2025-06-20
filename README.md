@@ -67,10 +67,21 @@
       
       **Activity Launch Modes**
       Define how a new Activity instance is created:
-          standard (default): Creates a new instance every time.
+          standard (default): Creates a new instance every time, even if the same activity is launched again.
+                  // In AndroidManifest.xml (default, so no need to specify)
+                  <activity android:name=".StandardActivity" />
+                  
           singleTop: Reuses the existing instance if it’s at the top of the stack.
+             Chat app:
+             Chat list: standard (multiple chat screens)
+             Specific chat: singleTop (avoid duplicates if already open)
+
           singleTask: Reuses the existing instance in the task (clears activities above it).
-          singleInstance: Creates a new task with only this Activity.
+          singleInstance: Activity gets its own dedicated task - nothing else can be in that task.
+             
+             Camera activity: singleInstance (nothing should interrupt it)
+            <activity android:name=".SoloActivity" 
+                      android:launchMode="singleInstance"/>
 
 ## 🧩**Fragment Lifecycle:**
     * Fragments are reusable UI components within activities. They have their own lifecycle methods similar to activities
