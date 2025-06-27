@@ -290,6 +290,7 @@
          - For communication between components within the same app
     Why? Prevents crashes & memory leaks by auto-unsubscribing when the app closes.
     Best for: Basic UI updates (e.g., showing text, lists).
+    LiveData is lifecycle-aware and it only works in the Main thread.
 
   DisAdv: LiveData does not have built-in support for error handling
   Can’t handle complex async tasks (like combining multiple data sources).
