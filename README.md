@@ -324,11 +324,11 @@
 - Powerful (supports map, filter, merge, etc.).
 - Kotlin’s Flow, SharedFlow, and StateFlow are used for handling asynchronous data streams in Android.
 
-1️⃣ Flow – Cold Stream (On-Demand) - Starts fresh for each collector (like a YouTube video replaying from start). 
+- 1️⃣ Flow – Cold Stream (On-Demand) - Starts fresh for each collector (like a YouTube video replaying from start). 
     - Used for one-time operations (e.g., network call, DB query).
-2️⃣ SharedFlow – Hot Stream (Always Holds Latest Value, Events (e.g., button clicks)) 
+- 2️⃣ SharedFlow – Hot Stream (Suitable for one shot events) (Always Holds Latest Value, Events (e.g., button clicks)) 
     - Emits data even without collectors (like a live TV broadcast).
-3️⃣ SteteFlow – Hot Stream (For One-Time Events Holds a single "state" value (like LiveData but for coroutines))
+- 3️⃣ SteteFlow – Hot Stream (Suitable for handling states) (For One-Time Events Holds a single "state" value (like LiveData but for coroutines))
     - UI state (e.g., loading, success, error).
 
     map → Transform data (1:1).
