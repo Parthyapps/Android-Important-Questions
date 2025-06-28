@@ -286,11 +286,11 @@
     MVVM: ViewModel holds UI-related data and logic, and updates the View through LiveData/Flow.
     
 # 🧩Live Data and Flow
-    What? A simple "data holder" that updates the UI only when the screen is active (lifecycle-aware).
+   - LiveData is lifecycle-aware and it only works in the Main thread.
+    What? an observable data holder class. A simple "data holder" that updates the UI only when the screen is active (lifecycle-aware).
          - For communication between components within the same app
     Why? Prevents crashes & memory leaks by auto-unsubscribing when the app closes.
     Best for: Basic UI updates (e.g., showing text, lists).
-    LiveData is lifecycle-aware and it only works in the Main thread.
 
   DisAdv: LiveData does not have built-in support for error handling
   Can’t handle complex async tasks (like combining multiple data sources).
@@ -306,7 +306,10 @@
         })
 
 # 📌 Flow, SharedFlow, and StateFlow in Android (Kotlin Coroutines)    
+- An asynchronous data stream that sequentially emits values and completes normally or with an exception.
 - Flow is a cold asynchronous stream in Kotlin Coroutines that emits multiple values sequentially.
+- Flow allows a better integration with Coroutines (both are Kotlin tools). Flow doesn’t need to use the Main thread to publish data in the UI, so it is easier to handle the Dispatchers and provide filtered data with less effort.
+- Flow solves LiveData’s backpressure issue and also provides Intermediate operators such as map, filter, take or zip which helps to operate over the upstream to create another one (the downstream)
 - Works with suspending functions.
 - Supports backpressure (handles fast producers & slow consumers).
 - Can be transformed (map, filter, debounce, etc.).
